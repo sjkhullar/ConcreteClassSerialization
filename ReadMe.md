@@ -1,0 +1,1 @@
+Serialization and Deserialization of objects. (Concrete class is Serializable and Base class is not Serializable)
