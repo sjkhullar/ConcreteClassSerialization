@@ -17,6 +17,7 @@ public class SerializeDeserialize {
 		outputStream.writeObject(employee);
 		outputStream.flush();
 		outputStream.close();
+		output.close();
 		System.out.println("Serialized the employee object : "+employee);
 	} 
 	public static void deSerialize() throws IOException, ClassNotFoundException {
@@ -25,7 +26,8 @@ public class SerializeDeserialize {
 		ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
 		Employee employee = (Employee) objectInputStream.readObject();
 		System.out.println("Deserialize the employee object :"+ employee);
-		inputStream.close();
+		objectInputStream.close();
+		inputStream.close();		
 	}
 	
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
